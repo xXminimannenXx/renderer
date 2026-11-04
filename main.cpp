@@ -56,11 +56,11 @@ int main()
 {
     tr::Vector3f lightDir = {0, 0, 1};
 
-    tr::Image image(1200, 1200);
+    tr::Image image(600, 600);
 
-    tr::Model model("african_head/african_head.obj");
-    tr::Model model1("african_head/african_head_eye_outer.obj");
-    tr::Model model2("african_head/african_head_eye_inner.obj");
+    tr::Model model("obj/african_head/african_head.obj");
+    tr::Model model1("obj/african_head/african_head_eye_outer.obj");
+    tr::Model model2("obj/african_head/african_head_eye_inner.obj");
 
     std::vector<float> zBuf(image.height * image.width, -std::numeric_limits<float>::max());
     std::vector<Color> screenPixels;
