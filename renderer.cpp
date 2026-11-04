@@ -34,6 +34,7 @@ struct ScreenPoint
 
     Vector2 pos;
     float z;
+    Vector3f normal;
 };
 Vector3f v3f_Sub(Vector3f a, Vector3f b)
 {
@@ -52,9 +53,17 @@ float v3f_dot(Vector3f a, Vector3f b)
 Vector3f v3f_norm(Vector3f a)
 {
     float leng = std::sqrt(v3f_dot(a, a));
-    if(leng == 0) return a;
-    return {a.x/leng, a.y/leng, a.z/leng};
-
+    if (leng == 0)
+        return a;
+    return {a.x / leng, a.y / leng, a.z / leng};
+}
+Vector3f v3f_add(Vector3f a, Vector3f b)
+{
+    return {a.x + b.x, a.y + b.y, a.z + b.z};
+}
+Vector3f v3f_scale(Vector3f a, float s)
+{
+    return {a.x * s, a.y * s, a.z * s};
 }
 
 class Image
@@ -148,6 +157,8 @@ class Model
 public:
     std::vector<Vector3f> verts;
     std::vector<int> trig;
+    std::vector<Vector3f> norms;
+    std::vector<int> normIdx;
     Model(const std::string &filePath)
     {
         read(filePath);
@@ -176,23 +187,36 @@ private:
                 si >> v.x >> v.y >> v.z;
                 verts.push_back(v);
             }
+            if (word == "vn")
+            {
+                Vector3f v;
+                si >> v.x >> v.y >> v.z;
+                norms.push_back(v);
+            }
             if (word == "f")
             {
+
                 for (int i = 0; i < 3; i++)
                 {
                     std::string group;
                     si >> group;
-                    int index = std::stoi(group) - 1;
-                    trig.push_back(index);
+                    std::replace(group.begin(), group.end(), '/', ' ');
+                    int pos;
+                    int texCord;
+                    int norm;
+                    std::istringstream cS(group);
+                    cS >> pos >> texCord >> norm;
+                    trig.push_back(pos - 1);
+                    normIdx.push_back(norm - 1);
                 }
             }
         }
     }
 };
-ScreenPoint toScreen(Vector3f v, int width, int height)
+ScreenPoint toScreen(Vector3f v, int width, int height, Vector3f normal = {0, 0, 0})
 {
 
-    return {static_cast<int>((v.x + 1) * width) / 2, static_cast<int>((v.y + 1) * height / 2), v.z};
+    return {static_cast<int>((v.x + 1) * width) / 2, static_cast<int>((v.y + 1) * height / 2), v.z, normal};
 }
 void drawWireFrame(const Model &model, Image &image, Pixel color)
 {
@@ -215,7 +239,7 @@ float areaTriangle(Vector2 a, Vector2 b, Vector2 c)
 
     return 0.5 * ((b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y));
 }
-void drawTriangle(ScreenPoint a, ScreenPoint b, ScreenPoint c, Image &image, Pixel color, std::vector<float> &zBuf)
+void drawTriangle(ScreenPoint a, ScreenPoint b, ScreenPoint c, Image &image, Pixel color, std::vector<float> &zBuf, Vector3f lightDir)
 {
 
     float area = areaTriangle(a.pos, b.pos, c.pos);
@@ -247,41 +271,56 @@ void drawTriangle(ScreenPoint a, ScreenPoint b, ScreenPoint c, Image &image, Pix
                 int indx = y * image.width + x;
                 if (pD > zBuf[indx])
                 {
+
+                    Vector3f normal = v3f_norm(v3f_add(v3f_scale(a.normal, alfa), v3f_add(v3f_scale(b.normal, beta), v3f_scale(c.normal, gamma))));
+                    float intensity = std::max(0.0f, v3f_dot(normal, lightDir));
+                    Pixel drawColor = {static_cast<uint8_t>(color.b * intensity), static_cast<uint8_t>(color.g * intensity), static_cast<uint8_t>(color.r * intensity)};
                     zBuf[indx] = pD;
-                   
-                    image.set(x, y,color);
+                    image.set(x, y, drawColor);
                 }
             }
         }
     }
 }
-void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf, Vector3f lightDir)
+void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf, Vector3f lightDir, Vector3f viewDir = {0, 0, 1})
 {
-      
+
     for (int i = 0; i < model.trig.size() / 3; i++)
     {
+        int n0 = model.normIdx.at(3 * i);
+        int n1 = model.normIdx.at(3 * i + 1);
+        int n2 = model.normIdx.at(3 * i + 2);
+        Vector3f aNormal = model.norms.at(n0);
+        Vector3f bNormal = model.norms.at(n1);
+        Vector3f cNormal = model.norms.at(n2);
 
         int i0 = model.trig.at(3 * i);
         int i1 = model.trig.at(3 * i + 1);
         int i2 = model.trig.at(3 * i + 2);
-        Vector3f a = {model.verts.at(i0)};
-        Vector3f b = {model.verts.at(i1)};
-        Vector3f c = {model.verts.at(i2)};
+        Vector3f a = model.verts.at(i0);
+        Vector3f b = model.verts.at(i1);
+        Vector3f c = model.verts.at(i2);
         Vector3f norm = v3f_norm(v3f_cross(v3f_Sub(b, a), v3f_Sub(c, a)));
-      
-        float intensity = v3f_dot(norm, lightDir);
-        if(intensity <= 0) continue;
-        Pixel drawColor = {static_cast<uint8_t>(color.b * intensity), static_cast<uint8_t>(color.g * intensity), static_cast<uint8_t>(color.r * intensity)};
-        drawTriangle(toScreen(a, image.width, image.height), toScreen(b, image.width, image.height), toScreen(c, image.width, image.height), image, drawColor, zBuf);
+
+        float facing = v3f_dot(norm, viewDir);
+        if (facing <= 0)
+            continue;
+
+        drawTriangle(toScreen(a, image.width, image.height, aNormal), toScreen(b, image.width, image.height, bNormal), toScreen(c, image.width, image.height, cNormal), image, color, zBuf, lightDir);
     }
 }
 int main()
 {
-    Vector3f lightDir = {0,0,1};
+    Vector3f lightDir = {0, 0, 1};
     Image image(1600, 1600);
     Model model("african_head/african_head.obj");
+    Model model1("african_head/african_head_eye_outer.obj");
+    Model model2("african_head/african_head_eye_inner.obj");
     std::vector<float> zBuf(image.height * image.width, -std::numeric_limits<float>::max());
-    // drawWireFrame(model, image,{255,0,0});
+
     drawModel(model, image, {255, 255, 255}, zBuf, lightDir);
+    drawModel(model1, image, {255, 255, 255}, zBuf, lightDir);
+    drawModel(model2, image, {255, 255, 255}, zBuf, lightDir);
+
     image.write("output.tga");
 }
