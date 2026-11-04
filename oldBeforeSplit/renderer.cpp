@@ -10,6 +10,8 @@
 #include <cstdlib>
 #include <limits>
 #include <cmath>
+
+
 struct Pixel
 {
 
@@ -309,6 +311,7 @@ void drawModel(const Model &model, Image &image, Pixel color, std::vector<float>
         drawTriangle(toScreen(a, image.width, image.height, aNormal), toScreen(b, image.width, image.height, bNormal), toScreen(c, image.width, image.height, cNormal), image, color, zBuf, lightDir);
     }
 }
+
 int main()
 {
     Vector3f lightDir = {0, 0, 1};
