@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <limits>
-
+#include <cmath>
 struct Pixel
 {
 
@@ -39,6 +39,22 @@ Vector3f v3f_Sub(Vector3f a, Vector3f b)
 {
 
     return {a.x - b.x, a.y - b.y, a.z - b.z};
+}
+Vector3f v3f_cross(Vector3f a, Vector3f b)
+{
+
+    return {a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x};
+}
+float v3f_dot(Vector3f a, Vector3f b)
+{
+    return a.x * b.x + a.y * b.y + a.z * b.z;
+}
+Vector3f v3f_norm(Vector3f a)
+{
+    float leng = std::sqrt(v3f_dot(a, a));
+    if(leng == 0) return a;
+    return {a.x/leng, a.y/leng, a.z/leng};
+
 }
 
 class Image
