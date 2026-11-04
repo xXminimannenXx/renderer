@@ -248,16 +248,16 @@ void drawTriangle(ScreenPoint a, ScreenPoint b, ScreenPoint c, Image &image, Pix
                 if (pD > zBuf[indx])
                 {
                     zBuf[indx] = pD;
-                    float sF = (pD + 1) / 2;
-                    image.set(x, y, {static_cast<uint8_t>(color.b * sF), static_cast<uint8_t>(color.g * sF), static_cast<uint8_t>(color.r * sF)});
+                   
+                    image.set(x, y,color);
                 }
             }
         }
     }
 }
-void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf)
+void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf, Vector3f lightDir)
 {
-
+      
     for (int i = 0; i < model.trig.size() / 3; i++)
     {
 
@@ -267,16 +267,21 @@ void drawModel(const Model &model, Image &image, Pixel color, std::vector<float>
         Vector3f a = {model.verts.at(i0)};
         Vector3f b = {model.verts.at(i1)};
         Vector3f c = {model.verts.at(i2)};
-        drawTriangle(toScreen(a, image.width, image.height), toScreen(b, image.width, image.height), toScreen(c, image.width, image.height), image, color, zBuf);
+        Vector3f norm = v3f_norm(v3f_cross(v3f_Sub(b, a), v3f_Sub(c, a)));
+      
+        float intensity = v3f_dot(norm, lightDir);
+        if(intensity <= 0) continue;
+        Pixel drawColor = {static_cast<uint8_t>(color.b * intensity), static_cast<uint8_t>(color.g * intensity), static_cast<uint8_t>(color.r * intensity)};
+        drawTriangle(toScreen(a, image.width, image.height), toScreen(b, image.width, image.height), toScreen(c, image.width, image.height), image, drawColor, zBuf);
     }
 }
 int main()
 {
-
+    Vector3f lightDir = {0,0,1};
     Image image(1600, 1600);
     Model model("african_head/african_head.obj");
     std::vector<float> zBuf(image.height * image.width, -std::numeric_limits<float>::max());
     // drawWireFrame(model, image,{255,0,0});
-    drawModel(model, image, {255, 255, 255}, zBuf);
+    drawModel(model, image, {255, 255, 255}, zBuf, lightDir);
     image.write("output.tga");
 }
