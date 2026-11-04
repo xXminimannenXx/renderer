@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "geometry.h"
+#include "Geometry.h"
 
 namespace tr
 {

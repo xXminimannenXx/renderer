@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
-#include "geometry.h"
-#include "image.h"
-#include "model.h"
+#include "Geometry.h"
+#include "Image.h"
+#include "Model.h"
 
 namespace tr
 {

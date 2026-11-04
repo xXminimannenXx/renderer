@@ -1,0 +1,21 @@
+# ninja log v7
+2	58	8155283528513557	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	252636299f8618bf
+2	58	8155283528513557	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	252636299f8618bf
+58	26252	8155283790457997	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	d2842b53a2657629
+58	26252	8155283790457997	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	d2842b53a2657629
+26252	26391	8155283790498003	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	7f15ea6735a534e
+26252	26391	8155283790498003	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	7f15ea6735a534e
+26392	26443	8155283792368861	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	84e997b235080199
+26392	26443	8155283792368861	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	84e997b235080199
+26443	26494	8155283792878869	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	d7a63f9e03ce4061
+26443	26494	8155283792878869	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	d7a63f9e03ce4061
+26494	26544	8155283793378864	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	2baee4418960a77f
+26494	26544	8155283793378864	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	2baee4418960a77f
+26544	26595	8155283793888868	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	3e3a257d2936cbc2
+26544	26595	8155283793888868	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	3e3a257d2936cbc2
+26595	26646	8155283794388866	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	423c9eec2264ba2
+26595	26646	8155283794388866	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	423c9eec2264ba2
+26646	26714	8155283795083991	CMakeFiles/raylib-populate-complete	9d01243185338e7d
+26646	26714	8155283795083991	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	9d01243185338e7d
+26646	26714	8155283795083991	D:/renderer/build/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete	9d01243185338e7d
+26646	26714	8155283795083991	D:/renderer/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	9d01243185338e7d

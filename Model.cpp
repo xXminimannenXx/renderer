@@ -1,4 +1,4 @@
-#include "model.h"
+#include "Model.h"
 #include <algorithm>
 #include <fstream>
 #include <iostream>

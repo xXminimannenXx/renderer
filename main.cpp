@@ -1,8 +1,9 @@
+#include <raylib.h>
 #include <limits>
 #include <vector>
-#include "draw.h"
-#include "image.h"
-#include "model.h"
+#include "Draw.h"
+#include "Image.h"
+#include "Model.h"
 
 int main()
 {
