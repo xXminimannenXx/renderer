@@ -193,17 +193,17 @@ float areaTriangle(Vector2 a, Vector2 b, Vector2 c)
 
     return 0.5 * ((b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y));
 }
-void drawTriangle(Vector2 a, Vector2 b, Vector2 c, Image &image, Pixel color)
+void drawTriangle(ScreenPoint a, ScreenPoint b, ScreenPoint c, Image &image, Pixel color, std::vector<float> &zBuf)
 {
 
-    float area = areaTriangle(a, b, c);
+    float area = areaTriangle(a.pos, b.pos, c.pos);
     if (area == 0)
         return;
 
-    int minX = std::min({a.x, b.x, c.x});
-    int maxX = std::max({a.x, b.x, c.x});
-    int minY = std::min({a.y, b.y, c.y});
-    int maxY = std::max({a.y, b.y, c.y});
+    int minX = std::min({a.pos.x, b.pos.x, c.pos.x});
+    int maxX = std::max({a.pos.x, b.pos.x, c.pos.x});
+    int minY = std::min({a.pos.y, b.pos.y, c.pos.y});
+    int maxY = std::max({a.pos.y, b.pos.y, c.pos.y});
     minX = minX < 0 ? 0 : minX;
     maxX = maxX > image.width - 1 ? image.width - 1 : maxX;
     minY = minY < 0 ? 0 : minY;
@@ -215,21 +215,28 @@ void drawTriangle(Vector2 a, Vector2 b, Vector2 c, Image &image, Pixel color)
         for (int x = minX; x <= maxX; x++)
         {
             Vector2 p = {x, y};
-            float alfa = areaTriangle(p, b, c) / area;
-            float beta = areaTriangle(a, p, c) / area;
-            float gamma = areaTriangle(a, b, p) / area;
+            float alfa = areaTriangle(p, b.pos, c.pos) / area;
+            float beta = areaTriangle(a.pos, p, c.pos) / area;
+            float gamma = areaTriangle(a.pos, b.pos, p) / area;
 
             if (alfa >= 0 && beta >= 0 && gamma >= 0)
             {
+                float pD = alfa * a.z + beta * b.z + gamma * c.z;
+                int indx = y * image.width + x;
+                if (pD > zBuf[indx])
+                {
+                    zBuf[indx] = pD;
+                    float sF = (pD +1)/2;
+                    image.set(x, y, {static_cast<uint8_t>(color.b * sF),static_cast<uint8_t>(color.g * sF),static_cast<uint8_t>(color.r * sF)});
 
-                image.set(x, y, color);
+                }
             }
         }
     }
 }
-void drawModel(const Model &model, Image &image, Pixel color)
+void drawModel(const Model &model, Image &image, Pixel color, std::vector<float>  &zBuf)
 {
-    // color används inte rn
+   
     for (int i = 0; i < model.trig.size() / 3; i++)
     {
 
@@ -239,7 +246,7 @@ void drawModel(const Model &model, Image &image, Pixel color)
         Vector3f a = {model.verts.at(i0)};
         Vector3f b = {model.verts.at(i1)};
         Vector3f c = {model.verts.at(i2)};
-        drawTriangle(toScreen(a, image.width, image.height).pos, toScreen(b, image.width, image.height).pos, toScreen(c, image.width, image.height).pos, image, {static_cast<uint8_t>(std::rand() % 256), static_cast<uint8_t>(std::rand() % 256), static_cast<uint8_t>(std::rand() % 256)});
+        drawTriangle(toScreen(a, image.width, image.height), toScreen(b, image.width, image.height), toScreen(c, image.width, image.height), image, color, zBuf);
     }
 }
 int main()
@@ -249,6 +256,6 @@ int main()
     Model model("african_head/african_head.obj");
     std::vector<float> zBuf(image.height * image.width, -std::numeric_limits<float>::max());
     // drawWireFrame(model, image,{255,0,0});
-    drawModel(model, image, {255, 0, 0});
+    drawModel(model, image, {255, 255, 255}, zBuf);
     image.write("output.tga");
 }
