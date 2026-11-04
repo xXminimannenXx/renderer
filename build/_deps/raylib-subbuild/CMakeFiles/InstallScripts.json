@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"D:/renderer/build/_deps/raylib-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
