@@ -12,7 +12,7 @@ int main()
 {
     tr::Vector3f lightDir = {0, 0, 1};
 
-    tr::Image image(600, 600);
+    tr::Image image(1200, 1200);
 
     tr::Model model("african_head/african_head.obj");
     tr::Model model1("african_head/african_head_eye_outer.obj");
