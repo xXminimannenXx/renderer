@@ -118,7 +118,7 @@ namespace tr
     }
 
     void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf,
-                   Vector3f lightDir, Vector3f viewDir)
+                   Vector3f lightDir, float yaw, float pitch, Vector3f viewDir)
     {
         for (int i = 0; i < model.trig.size() / 3; i++)
         {
@@ -128,6 +128,13 @@ namespace tr
             Vector3f aNormal = model.norms.at(n0);
             Vector3f bNormal = model.norms.at(n1);
             Vector3f cNormal = model.norms.at(n2);
+            aNormal = tr::v3f_rotateY(aNormal, yaw);
+            bNormal = tr::v3f_rotateY(bNormal, yaw);
+            cNormal = tr::v3f_rotateY(cNormal, yaw);
+
+            aNormal = tr::v3f_rotateX(aNormal, pitch);
+            bNormal = tr::v3f_rotateX(bNormal, pitch);
+            cNormal = tr::v3f_rotateX(cNormal, pitch);
 
             int i0 = model.trig.at(3 * i);
             int i1 = model.trig.at(3 * i + 1);
@@ -135,6 +142,13 @@ namespace tr
             Vector3f a = model.verts.at(i0);
             Vector3f b = model.verts.at(i1);
             Vector3f c = model.verts.at(i2);
+            a = tr::v3f_rotateY(a, yaw);
+            b = tr::v3f_rotateY(b, yaw);
+            c = tr::v3f_rotateY(c, yaw);
+
+            a = tr::v3f_rotateX(a, pitch);
+            b = tr::v3f_rotateX(b, pitch);
+            c = tr::v3f_rotateX(c, pitch);
             Vector3f norm = v3f_norm(v3f_cross(v3f_Sub(b, a), v3f_Sub(c, a)));
 
             float facing = v3f_dot(norm, viewDir);

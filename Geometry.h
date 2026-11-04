@@ -52,5 +52,13 @@ namespace tr
     {
         return {a.x * s, a.y * s, a.z * s};
     }
+    inline Vector3f v3f_rotateY(Vector3f a, float angle)
+    {
+
+        return {a.x * std::cos(angle) + a.z * std::sin(angle), a.y, -a.x * std::sin(angle) + a.z * std::cos(angle)};
+    }
+    inline Vector3f v3f_rotateX(Vector3f a, float angle){
+        return {a.x, a.y * std::cos(angle) - a.z * std::sin(angle), a.y * std::sin(angle) + a.z * std::cos(angle)};
+    }
 
 }
