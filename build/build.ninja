@@ -57,44 +57,46 @@ build CMakeFiles/renderer.dir/main.cpp.obj: CXX_COMPILER__renderer_unscanned_Rel
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = CMakeFiles\renderer.dir
   OBJECT_FILE_DIR = CMakeFiles\renderer.dir
-  TARGET_COMPILE_PDB = CMakeFiles\renderer.dir\
-  TARGET_PDB = renderer.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\renderer.dir
 
-build CMakeFiles/renderer.dir/image.cpp.obj: CXX_COMPILER__renderer_unscanned_Release D$:/renderer/image.cpp || cmake_object_order_depends_target_renderer
+build CMakeFiles/renderer.dir/Image.cpp.obj: CXX_COMPILER__renderer_unscanned_Release D$:/renderer/Image.cpp || cmake_object_order_depends_target_renderer
   CONFIG = Release
   DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
-  DEP_FILE = CMakeFiles\renderer.dir\image.cpp.obj.d
+  DEP_FILE = CMakeFiles\renderer.dir\Image.cpp.obj.d
   FLAGS = -O3 -DNDEBUG -std=gnu++17
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = CMakeFiles\renderer.dir
   OBJECT_FILE_DIR = CMakeFiles\renderer.dir
-  TARGET_COMPILE_PDB = CMakeFiles\renderer.dir\
-  TARGET_PDB = renderer.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\renderer.dir
 
-build CMakeFiles/renderer.dir/model.cpp.obj: CXX_COMPILER__renderer_unscanned_Release D$:/renderer/model.cpp || cmake_object_order_depends_target_renderer
+build CMakeFiles/renderer.dir/Model.cpp.obj: CXX_COMPILER__renderer_unscanned_Release D$:/renderer/Model.cpp || cmake_object_order_depends_target_renderer
   CONFIG = Release
   DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
-  DEP_FILE = CMakeFiles\renderer.dir\model.cpp.obj.d
+  DEP_FILE = CMakeFiles\renderer.dir\Model.cpp.obj.d
   FLAGS = -O3 -DNDEBUG -std=gnu++17
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = CMakeFiles\renderer.dir
   OBJECT_FILE_DIR = CMakeFiles\renderer.dir
-  TARGET_COMPILE_PDB = CMakeFiles\renderer.dir\
-  TARGET_PDB = renderer.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\renderer.dir
 
-build CMakeFiles/renderer.dir/draw.cpp.obj: CXX_COMPILER__renderer_unscanned_Release D$:/renderer/draw.cpp || cmake_object_order_depends_target_renderer
+build CMakeFiles/renderer.dir/Draw.cpp.obj: CXX_COMPILER__renderer_unscanned_Release D$:/renderer/Draw.cpp || cmake_object_order_depends_target_renderer
   CONFIG = Release
   DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
-  DEP_FILE = CMakeFiles\renderer.dir\draw.cpp.obj.d
+  DEP_FILE = CMakeFiles\renderer.dir\Draw.cpp.obj.d
   FLAGS = -O3 -DNDEBUG -std=gnu++17
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = CMakeFiles\renderer.dir
   OBJECT_FILE_DIR = CMakeFiles\renderer.dir
-  TARGET_COMPILE_PDB = CMakeFiles\renderer.dir\
-  TARGET_PDB = renderer.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\renderer.dir
+
+build CMakeFiles/renderer.dir/Display.cpp.obj: CXX_COMPILER__renderer_unscanned_Release D$:/renderer/Display.cpp || cmake_object_order_depends_target_renderer
+  CONFIG = Release
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles\renderer.dir\Display.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17
+  INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = CMakeFiles\renderer.dir
+  OBJECT_FILE_DIR = CMakeFiles\renderer.dir
   TARGET_SUPPORT_DIR = CMakeFiles\renderer.dir
 
 
@@ -105,17 +107,16 @@ build CMakeFiles/renderer.dir/draw.cpp.obj: CXX_COMPILER__renderer_unscanned_Rel
 #############################################
 # Link the executable renderer.exe
 
-build renderer.exe: CXX_EXECUTABLE_LINKER__renderer_Release CMakeFiles/renderer.dir/main.cpp.obj CMakeFiles/renderer.dir/image.cpp.obj CMakeFiles/renderer.dir/model.cpp.obj CMakeFiles/renderer.dir/draw.cpp.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
+build renderer.exe: CXX_EXECUTABLE_LINKER__renderer_Release CMakeFiles/renderer.dir/main.cpp.obj CMakeFiles/renderer.dir/Image.cpp.obj CMakeFiles/renderer.dir/Model.cpp.obj CMakeFiles/renderer.dir/Draw.cpp.obj CMakeFiles/renderer.dir/Display.cpp.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
   CONFIG = Release
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -lopengl32  -lglu32  -lwinmm  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\renderer.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\renderer.dir\
   TARGET_FILE = renderer.exe
   TARGET_IMPLIB = librenderer.dll.a
-  TARGET_PDB = renderer.pdb
+  TARGET_PDB = renderer.exe.dbg
   TARGET_SUPPORT_DIR = CMakeFiles\renderer.dir
 
 
@@ -338,8 +339,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.obj: C_COMPILER__
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -isystem D:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.obj: C_COMPILER__raylib_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/rcore.c || cmake_object_order_depends_target_raylib
@@ -350,8 +349,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.obj: C_COMPILER__r
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -isystem D:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj: C_COMPILER__raylib_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/rmodels.c || cmake_object_order_depends_target_raylib
@@ -362,8 +359,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj: C_COMPILER_
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -isystem D:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.obj: C_COMPILER__raylib_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/rshapes.c || cmake_object_order_depends_target_raylib
@@ -374,8 +369,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.obj: C_COMPILER_
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -isystem D:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj: C_COMPILER__raylib_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/rtext.c || cmake_object_order_depends_target_raylib
@@ -386,8 +379,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj: C_COMPILER__r
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -isystem D:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.obj: C_COMPILER__raylib_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/rtextures.c || cmake_object_order_depends_target_raylib
@@ -398,8 +389,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.obj: C_COMPILE
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -isystem D:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.obj: C_COMPILER__raylib_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/utils.c || cmake_object_order_depends_target_raylib
@@ -410,8 +399,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.obj: C_COMPILER__r
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src -isystem D:/renderer/build/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 
@@ -428,9 +415,8 @@ build _deps/raylib-build/raylib/libraylib.a: C_STATIC_LIBRARY_LINKER__raylib_Rel
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
   TARGET_FILE = _deps\raylib-build\raylib\libraylib.a
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
+  TARGET_PDB = raylib.a.dbg
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 
@@ -640,8 +626,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/init.c || cmake_object_order_depends_target_glfw
@@ -652,8 +636,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.obj
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/input.c || cmake_object_order_depends_target_glfw
@@ -664,8 +646,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.ob
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
@@ -676,8 +656,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/platform.c || cmake_object_order_depends_target_glfw
@@ -688,8 +666,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
@@ -700,8 +676,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/window.c || cmake_object_order_depends_target_glfw
@@ -712,8 +686,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
@@ -724,8 +696,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_contex
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
@@ -736,8 +706,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_con
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/null_init.c || cmake_object_order_depends_target_glfw
@@ -748,8 +716,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/null_monitor.c || cmake_object_order_depends_target_glfw
@@ -760,8 +726,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monit
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/null_window.c || cmake_object_order_depends_target_glfw
@@ -772,8 +736,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_windo
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/null_joystick.c || cmake_object_order_depends_target_glfw
@@ -784,8 +746,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joyst
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_module.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/win32_module.c || cmake_object_order_depends_target_glfw
@@ -796,8 +756,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_modu
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/win32_time.c || cmake_object_order_depends_target_glfw
@@ -808,8 +766,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_time
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/win32_thread.c || cmake_object_order_depends_target_glfw
@@ -820,8 +776,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_thre
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/win32_init.c || cmake_object_order_depends_target_glfw
@@ -832,8 +786,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_init
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/win32_joystick.c || cmake_object_order_depends_target_glfw
@@ -844,8 +796,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joys
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/win32_monitor.c || cmake_object_order_depends_target_glfw
@@ -856,8 +806,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_moni
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/win32_window.c || cmake_object_order_depends_target_glfw
@@ -868,8 +816,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_wind
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj: C_COMPILER__glfw_unscanned_Release D$:/renderer/build/_deps/raylib-src/src/external/glfw/src/wgl_context.c || cmake_object_order_depends_target_glfw
@@ -880,8 +826,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/wgl_contex
   INCLUDES = -ID:/renderer/build/_deps/raylib-src/src/external/glfw/include -ID:/renderer/build/_deps/raylib-src/src/external/glfw/src -ID:/renderer/build/_deps/raylib-build/raylib/external/glfw/src
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 
@@ -1055,14 +999,14 @@ build _deps/raylib-build/raylib/external/glfw/src/all: phony _deps/raylib-build/
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja D$:/renderer/build/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/raylib/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/raylib/external/glfw/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/raylib/external/glfw/src/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/CTestTestfile.cmake D$:/renderer/build/_deps/raylib-build/raylib/CTestTestfile.cmake: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-4.4/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCCompilerABI.c C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerSupport.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeNinjaFindMake.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystem.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CPack.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CPackComponent.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Diab-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-CXX-CXXImportStd.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/PellesC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Renesas-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/TIClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindOpenGL.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeDetermineLinkerId.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeInspectCLinker.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeInspectCXXLinker.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckCommon.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/4.4.3/CMakeCCompiler.cmake CMakeFiles/4.4.3/CMakeCXXCompiler.cmake CMakeFiles/4.4.3/CMakeRCCompiler.cmake CMakeFiles/4.4.3/CMakeSystem.cmake D$:/renderer/CMakeLists.txt _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/Uninstall.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/src/CMakeLists.txt
+build build.ninja D$:/renderer/build/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/raylib/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/raylib/external/glfw/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/raylib/external/glfw/src/cmake_install.cmake D$:/renderer/build/_deps/raylib-build/CTestTestfile.cmake D$:/renderer/build/_deps/raylib-build/raylib/CTestTestfile.cmake: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-4.4/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CPack.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CPackComponent.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindOpenGL.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckCommon.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/4.4.3/CMakeCCompiler.cmake CMakeFiles/4.4.3/CMakeCXXCompiler.cmake CMakeFiles/4.4.3/CMakeRCCompiler.cmake CMakeFiles/4.4.3/CMakeSystem.cmake D$:/renderer/CMakeLists.txt _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/Uninstall.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/src/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/CMake/share/cmake-4.4/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCCompilerABI.c C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerSupport.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeNinjaFindMake.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystem.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CPack.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CPackComponent.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Diab-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-CXX-CXXImportStd.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/PellesC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Renesas-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/TIClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindOpenGL.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeDetermineLinkerId.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeInspectCLinker.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeInspectCXXLinker.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckCommon.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/4.4.3/CMakeCCompiler.cmake CMakeFiles/4.4.3/CMakeCXXCompiler.cmake CMakeFiles/4.4.3/CMakeRCCompiler.cmake CMakeFiles/4.4.3/CMakeSystem.cmake D$:/renderer/CMakeLists.txt _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/Uninstall.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/src/CMakeLists.txt: phony
+build C$:/Program$ Files/CMake/share/cmake-4.4/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CPack.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CPackComponent.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindOpenGL.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckCommon.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake C$:/Program$ Files/CMake/share/cmake-4.4/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/4.4.3/CMakeCCompiler.cmake CMakeFiles/4.4.3/CMakeCXXCompiler.cmake CMakeFiles/4.4.3/CMakeRCCompiler.cmake CMakeFiles/4.4.3/CMakeSystem.cmake D$:/renderer/CMakeLists.txt _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/Uninstall.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/src/CMakeLists.txt: phony
 
 
 #############################################
