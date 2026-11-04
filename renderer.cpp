@@ -35,6 +35,12 @@ struct ScreenPoint
     Vector2 pos;
     float z;
 };
+Vector3f v3f_Sub(Vector3f a, Vector3f b)
+{
+
+    return {a.x - b.x, a.y - b.y, a.z - b.z};
+}
+
 class Image
 {
 
@@ -226,17 +232,16 @@ void drawTriangle(ScreenPoint a, ScreenPoint b, ScreenPoint c, Image &image, Pix
                 if (pD > zBuf[indx])
                 {
                     zBuf[indx] = pD;
-                    float sF = (pD +1)/2;
-                    image.set(x, y, {static_cast<uint8_t>(color.b * sF),static_cast<uint8_t>(color.g * sF),static_cast<uint8_t>(color.r * sF)});
-
+                    float sF = (pD + 1) / 2;
+                    image.set(x, y, {static_cast<uint8_t>(color.b * sF), static_cast<uint8_t>(color.g * sF), static_cast<uint8_t>(color.r * sF)});
                 }
             }
         }
     }
 }
-void drawModel(const Model &model, Image &image, Pixel color, std::vector<float>  &zBuf)
+void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf)
 {
-   
+
     for (int i = 0; i < model.trig.size() / 3; i++)
     {
 
