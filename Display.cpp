@@ -1,5 +1,5 @@
 #include "Display.h"
-
+namespace tr{
 void toRaylibPixels(const tr::Image &source, std::vector<Color> &out)
 {
 
@@ -13,4 +13,5 @@ void toRaylibPixels(const tr::Image &source, std::vector<Color> &out)
             out[(source.height - 1 - y) * source.width + x] = {p.r, p.g, p.b, 255};
         }
     }
+}
 }

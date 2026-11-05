@@ -56,7 +56,7 @@ int main()
 {
     tr::Vector3f lightDir = {0, 0, 1};
 
-    tr::Image image(600, 600);
+    tr::Image image(800, 800);
 
     tr::Model model("obj/african_head/african_head.obj");
     tr::Model model1("obj/african_head/african_head_eye_outer.obj");
@@ -84,7 +84,7 @@ int main()
         tr::drawModel(model1, image, {255, 255, 255}, zBuf, lightDir, modelYaw, modelPitch);
         tr::drawModel(model2, image, {255, 255, 255}, zBuf, lightDir, modelYaw, modelPitch);
 
-        toRaylibPixels(image, screenPixels);
+        tr::toRaylibPixels(image, screenPixels);
         UpdateTexture(texture, screenPixels.data());
 
         BeginDrawing();
@@ -92,6 +92,7 @@ int main()
         DrawTexture(texture, 0, 0, WHITE);
         DrawFPS(10, 10);
         EndDrawing();
+  
     }
 
     UnloadTexture(texture);
