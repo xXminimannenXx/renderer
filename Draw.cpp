@@ -118,7 +118,7 @@ namespace tr
     }
 
     void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf,
-                   Vector3f lightDir, float yaw, float pitch, Vector3f viewDir)
+                   Vector3f lightDir, float yaw, float pitch, const tr::Camera &cam)
     {
         for (int i = 0; i < model.trig.size() / 3; i++)
         {
@@ -151,10 +151,12 @@ namespace tr
             c = tr::v3f_rotateX(c, pitch);
             Vector3f norm = v3f_norm(v3f_cross(v3f_Sub(b, a), v3f_Sub(c, a)));
 
-            float facing = v3f_dot(norm, viewDir);
+            float facing = v3f_dot(norm, cam.directionTo(a));
             if (facing <= 0)
                 continue;
-
+            a = cam.project(a); 
+            b = cam.project(b);
+            c = cam.project(c);
             drawTriangle(toScreen(a, image.width, image.height, aNormal),
                          toScreen(b, image.width, image.height, bNormal),
                          toScreen(c, image.width, image.height, cNormal),

@@ -3,7 +3,7 @@
 #include "Geometry.h"
 #include "Image.h"
 #include "Model.h"
-
+#include "Camera.h"
 namespace tr
 {
 
@@ -19,6 +19,6 @@ namespace tr
     void drawWireFrame(const Model &model, Image &image, Pixel color);
 
     void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf,
-                   Vector3f lightDir,  float yaw, float pitch, Vector3f viewDir = {0, 0, 1});
+                   Vector3f lightDir,  float yaw, float pitch, const tr::Camera &cam);
 
 }

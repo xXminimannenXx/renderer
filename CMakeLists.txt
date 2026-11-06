@@ -16,5 +16,5 @@ FetchContent_Declare(
 set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(raylib)
 
-add_executable(renderer main.cpp Image.cpp Model.cpp Draw.cpp Display.cpp)
+add_executable(renderer main.cpp Image.cpp Model.cpp Draw.cpp Display.cpp Camera.cpp)
 target_link_libraries(renderer PRIVATE raylib)

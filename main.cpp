@@ -12,6 +12,7 @@ float lightYaw = 0;
 float lightPitch = 0;
 float modelYaw = 0;
 float modelPitch = 0;
+tr::Camera cam({0, 0, 3});
 
 void handleInput(tr::Image &image)
 {
@@ -51,6 +52,19 @@ void handleInput(tr::Image &image)
     {
         modelPitch -= 1.5 * GetFrameTime();
     }
+    if (IsKeyDown(KEY_Q))
+    {
+
+       
+        cam.pos.z += 3 * GetFrameTime();
+    }
+    if (IsKeyDown(KEY_E))
+    {
+
+        if (cam.pos.z <= 1.5)
+            return;
+        cam.pos.z -= 3 * GetFrameTime();
+    }
 }
 int main()
 {
@@ -70,7 +84,7 @@ int main()
 
     Image image2 = GenImageColor(image.width, image.height, BLACK);
     Texture2D texture = LoadTextureFromImage(image2);
-
+    Color BackgroundColor = BLACK;
     UnloadImage(image2);
 
     while (!WindowShouldClose())
@@ -80,19 +94,19 @@ int main()
         std::fill(image.pixels.begin(), image.pixels.end(), tr::Pixel{0, 0, 0});
         std::fill(zBuf.begin(), zBuf.end(), -std::numeric_limits<float>::max());
 
-        tr::drawModel(model, image, {255, 255, 255}, zBuf, lightDir, modelYaw, modelPitch);
-        tr::drawModel(model1, image, {255, 255, 255}, zBuf, lightDir, modelYaw, modelPitch);
-        tr::drawModel(model2, image, {255, 255, 255}, zBuf, lightDir, modelYaw, modelPitch);
+        tr::drawModel(model, image, {255, 255, 255}, zBuf, lightDir, modelYaw, modelPitch, cam);
+        tr::drawModel(model1, image, {255, 255, 255}, zBuf, lightDir, modelYaw, modelPitch, cam);
+        tr::drawModel(model2, image, {255, 255, 255}, zBuf, lightDir, modelYaw, modelPitch, cam);
 
         tr::toRaylibPixels(image, screenPixels);
         UpdateTexture(texture, screenPixels.data());
 
         BeginDrawing();
-        ClearBackground(BLACK);
+        ClearBackground(BackgroundColor);
+        
         DrawTexture(texture, 0, 0, WHITE);
         DrawFPS(10, 10);
         EndDrawing();
-  
     }
 
     UnloadTexture(texture);
