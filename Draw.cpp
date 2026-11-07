@@ -154,7 +154,14 @@ namespace tr
             float facing = v3f_dot(norm, cam.directionTo(a));
             if (facing <= 0)
                 continue;
-            a = cam.project(a); 
+            a = cam.toView(a);
+            b = cam.toView(b);
+            c = cam.toView(c);
+
+            if (a.z > -0.1 || b.z > -0.1 || c.z > -0.1)
+                continue;
+            
+            a = cam.project(a);
             b = cam.project(b);
             c = cam.project(c);
             drawTriangle(toScreen(a, image.width, image.height, aNormal),

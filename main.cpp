@@ -16,6 +16,9 @@ tr::Camera cam({0, 0, 3});
 
 void handleInput(tr::Image &image)
 {
+    Vector2 mouseDelta = GetMouseDelta();
+    tr::Vector3f scaledForward =  v3f_scale(cam.forward(),1.5*GetFrameTime());
+    tr::Vector3f scaledRight =  v3f_scale(cam.right(),1.5*GetFrameTime());
     if (IsKeyDown(KEY_LEFT))
     {
         lightYaw -= 1.5 * GetFrameTime();
@@ -38,33 +41,34 @@ void handleInput(tr::Image &image)
     }
     if (IsKeyDown(KEY_A))
     {
-        modelYaw += 1.5 * GetFrameTime();
+       cam.pos =   tr::v3f_Sub(cam.pos,scaledRight);
     }
     if (IsKeyDown(KEY_D))
     {
-        modelYaw -= 1.5 * GetFrameTime();
-    }
-    if (IsKeyDown(KEY_W))
-    {
-        modelPitch += 1.5 * GetFrameTime();
+        cam.pos = tr::v3f_add(scaledRight, cam.pos);
     }
     if (IsKeyDown(KEY_S))
     {
-        modelPitch -= 1.5 * GetFrameTime();
+        cam.pos = v3f_Sub(cam.pos,scaledForward);
+    }
+    if (IsKeyDown(KEY_W))
+    {
+        cam.pos = v3f_add(scaledForward, cam.pos);
     }
     if (IsKeyDown(KEY_Q))
     {
 
        
-        cam.pos.z += 3 * GetFrameTime();
+        cam.pos.y -= 1.5 * GetFrameTime();
     }
     if (IsKeyDown(KEY_E))
     {
-
-        if (cam.pos.z <= 1.5)
-            return;
-        cam.pos.z -= 3 * GetFrameTime();
+       cam.pos.y += 1.5 * GetFrameTime();
     }
+    cam.yaw -= mouseDelta.x * 0.003;
+    cam.pitch -= mouseDelta.y * 0.003;
+    cam.pitch = std::clamp(cam.pitch,-1.5f,1.5f);
+
 }
 int main()
 {
@@ -80,6 +84,7 @@ int main()
     std::vector<Color> screenPixels;
 
     InitWindow(image.width, image.height, "Renderer");
+    DisableCursor();
     SetTargetFPS(60);
 
     Image image2 = GenImageColor(image.width, image.height, BLACK);
