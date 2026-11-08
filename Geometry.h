@@ -3,7 +3,12 @@
 
 namespace tr
 {
-
+    struct Vector2f
+    {
+        float u;
+        float v;
+    };
+    
     struct Vector2
     {
 

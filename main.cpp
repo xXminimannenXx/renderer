@@ -75,6 +75,9 @@ int main()
     tr::Vector3f lightDir = {0, 0, 1};
 
     tr::Image image(800, 800);
+    tr::Image tex(0,0);
+    tex.read("obj/african_head/african_head_diffuse.tga");
+    tex.write("outputTex.tga");
 
     tr::Model model("obj/african_head/african_head.obj");
     tr::Model model1("obj/african_head/african_head_eye_outer.obj");

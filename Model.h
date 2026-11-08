@@ -13,6 +13,8 @@ namespace tr
         std::vector<int> trig;
         std::vector<Vector3f> norms;
         std::vector<int> normIdx;
+        std::vector<Vector2f> uvs;
+        std::vector<int> uvIdx;
 
         Model(const std::string &filePath);
 
