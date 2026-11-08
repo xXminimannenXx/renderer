@@ -73,7 +73,7 @@ int main()
 {
     tr::Vector3f lightDir = {0, 0, 1};
 
-    tr::Image image(800, 800);
+    tr::Image image(1000, 1000);
 
     tr::Image headTex(0, 0);
     tr::Image eyeTex(0, 0);
