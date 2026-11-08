@@ -27,6 +27,7 @@ namespace tr
         Vector2 pos;
         float z;
         Vector3f normal;
+        Vector2f uv;
     };
     inline Vector3f v3f_Sub(Vector3f a, Vector3f b)
     {

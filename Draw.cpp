@@ -6,9 +6,9 @@
 namespace tr
 {
 
-    ScreenPoint toScreen(Vector3f v, int width, int height, Vector3f normal)
+    ScreenPoint toScreen(Vector3f v, int width, int height, Vector3f normal, Vector2f uv)
     {
-        return {static_cast<int>((v.x + 1) * width) / 2, static_cast<int>((v.y + 1) * height / 2), v.z, normal};
+        return {static_cast<int>((v.x + 1) * width) / 2, static_cast<int>((v.y + 1) * height / 2), v.z, normal, uv};
     }
 
     void line(Vector2 a, Vector2 b, Image &image, Pixel p)
@@ -76,7 +76,7 @@ namespace tr
     }
 
     void drawTriangle(ScreenPoint a, ScreenPoint b, ScreenPoint c, Image &image, Pixel color,
-                      std::vector<float> &zBuf, Vector3f lightDir)
+                      std::vector<float> &zBuf, Vector3f lightDir,  const Image &texture)
     {
         float area = areaTriangle(a.pos, b.pos, c.pos);
         if (area == 0)
@@ -106,9 +106,14 @@ namespace tr
                     int indx = y * image.width + x;
                     if (pD > zBuf[indx])
                     {
+                        float u = alfa * a.uv.u + beta * b.uv.u + gamma * c.uv.u;
+                        float v = alfa * a.uv.v +beta * b.uv.v + gamma * c.uv.v;
+                        int xU = static_cast<int>(u * (texture.width-1));
+                        int yV = static_cast<int>(v * (texture.height-1));
+                        Pixel texel = texture.get(xU,yV);
                         Vector3f normal = v3f_norm(v3f_add(v3f_scale(a.normal, alfa), v3f_add(v3f_scale(b.normal, beta), v3f_scale(c.normal, gamma))));
                         float intensity = std::max(0.0f, v3f_dot(normal, lightDir));
-                        Pixel drawColor = {static_cast<std::uint8_t>(color.b * intensity), static_cast<std::uint8_t>(color.g * intensity), static_cast<std::uint8_t>(color.r * intensity)};
+                        Pixel drawColor = {static_cast<std::uint8_t>(texel.b * intensity), static_cast<std::uint8_t>(texel.g * intensity), static_cast<std::uint8_t>(texel.r * intensity)};
                         zBuf[indx] = pD;
                         image.set(x, y, drawColor);
                     }
@@ -118,13 +123,24 @@ namespace tr
     }
 
     void drawModel(const Model &model, Image &image, Pixel color, std::vector<float> &zBuf,
-                   Vector3f lightDir, float yaw, float pitch, const tr::Camera &cam)
+                   Vector3f lightDir, float yaw, float pitch, const tr::Camera &cam, const Image &texture)
     {
         for (int i = 0; i < model.trig.size() / 3; i++)
         {
             int n0 = model.normIdx.at(3 * i);
             int n1 = model.normIdx.at(3 * i + 1);
             int n2 = model.normIdx.at(3 * i + 2);
+
+            
+            int u0 = model.uvIdx.at(i*3);
+            int u1 = model.uvIdx.at(i*3 + 1);
+            int u2 = model.uvIdx.at(i*3 + 2);
+
+            Vector2f aU = model.uvs.at(u0);
+            Vector2f bU = model.uvs.at(u1);
+            Vector2f cU = model.uvs.at(u2);
+
+
             Vector3f aNormal = model.norms.at(n0);
             Vector3f bNormal = model.norms.at(n1);
             Vector3f cNormal = model.norms.at(n2);
@@ -149,6 +165,8 @@ namespace tr
             a = tr::v3f_rotateX(a, pitch);
             b = tr::v3f_rotateX(b, pitch);
             c = tr::v3f_rotateX(c, pitch);
+
+            
             Vector3f norm = v3f_norm(v3f_cross(v3f_Sub(b, a), v3f_Sub(c, a)));
 
             float facing = v3f_dot(norm, cam.directionTo(a));
@@ -164,10 +182,10 @@ namespace tr
             a = cam.project(a);
             b = cam.project(b);
             c = cam.project(c);
-            drawTriangle(toScreen(a, image.width, image.height, aNormal),
-                         toScreen(b, image.width, image.height, bNormal),
-                         toScreen(c, image.width, image.height, cNormal),
-                         image, color, zBuf, lightDir);
+            drawTriangle(toScreen(a, image.width, image.height, aNormal,aU),
+                         toScreen(b, image.width, image.height, bNormal,bU),
+                         toScreen(c, image.width, image.height, cNormal,cU),
+                         image, color, zBuf, lightDir, texture);
         }
     }
 

@@ -38,6 +38,13 @@ namespace tr
                 si >> v.x >> v.y >> v.z;
                 norms.push_back(v);
             }
+            if(word == "vt"){
+                Vector2f v;
+                si >> v.u >> v.v;
+                uvs.push_back(v);
+
+
+            }
             if (word == "f")
             {
                 for (int i = 0; i < 3; i++)
@@ -52,6 +59,7 @@ namespace tr
                     cS >> pos >> texCord >> norm;
                     trig.push_back(pos - 1);
                     normIdx.push_back(norm - 1);
+                    uvIdx.push_back(texCord-1);
                 }
             }
         }
