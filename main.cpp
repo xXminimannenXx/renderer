@@ -74,17 +74,22 @@ int main()
     tr::Vector3f lightDir = {0, 0, 1};
 
     tr::Image image(1000, 1000);
+    const std::string base = "obj/african_head/african_head";
+
+    std::string headObjPath = base + ".obj";
+    std::string headTexPath = base + "_diffuse.tga";
+    std::string eyeObjPath = base + "_eye_inner.obj";
+    std::string eyeTexPath = base + "_eye_inner_diffuse.tga";
+
+    tr::Model head(headObjPath);
+    tr::Model eyes(eyeObjPath);
 
     tr::Image headTex(0, 0);
     tr::Image eyeTex(0, 0);
-    if (!headTex.read("obj/african_head/african_head_diffuse.tga"))
-        std::cerr << "kunde inte lasa huvudets textur\n";
-    if (!eyeTex.read("obj/african_head/african_head_eye_inner_diffuse.tga"))
-        std::cerr << "kunde inte lasa ogats textur\n";
-
-    tr::Model head("obj/african_head/african_head.obj");
-    tr::Model eyes("obj/african_head/african_head_eye_inner.obj");
-
+    if (!headTex.read(headTexPath))
+        std::cerr << "kunde inte läsa " << headTexPath << '\n';
+    if (!eyeTex.read(eyeTexPath))
+        std::cerr << "kunde inte läsa " << eyeTexPath << '\n';
     std::vector<float> zBuf(image.height * image.width, -std::numeric_limits<float>::max());
     std::vector<Color> screenPixels;
 
